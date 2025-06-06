@@ -1,51 +1,21 @@
-# Django-Todolist
+# Docker Compose Setup for Django Todo App with MySQL and ENV Configuration
 
-Django-Todolist is a todolist web application with the most basic features of most web apps, i.e. accounts/login, API and (somewhat) interactive UI.
+# Project Overview:
 
----
-CSS | [Skeleton](http://getskeleton.com/)
-JS  | [jQuery](https://jquery.com/)
+This project configures a Django-based Todo application to run in Docker containers alongside a MySQL database. It uses Docker Compose with semantic versioning, environment variables for dynamic database configuration, and persistent storage for MySQL.
 
-## Explore
-Try it out by installing the requirements. (Works only with python >= 3.8, due to Django 4)
+# Tech stack:
 
-    pip install -r requirements.txt
+- Docker & Docker Compose
+- MySQL
+- Python / Django
+- Semantic Versioning
+- Shell / Environment variables
 
-Create a database schema:
+# What was done:
 
-    python manage.py migrate
-
-And then start the server (default: http://localhost:8000)
-
-    python manage.py runserver
-
-
-Now you can browse the [API](http://localhost:8000/api/)
-or start on the [landing page](http://localhost:8000/)
-
-## Task
-#### Prerequisites
-- Fork this repository
-
-#### Requirements
-1. pdate docker-compose to be able to set such env variables:
-    - ENGINE
-    - NAME
-    - USER
-    - PASSWORD
-    - HOST
-    - PORT
-2. Update your app to read ENV vars and set DATABASES section fields inside of todolist/settigns.py file
-3. Use semantic versioning to tag image inside the docker-compose
-4. TODO App should work as before
-5. Create PR with your changes and attach it for validation on a platform
-
-
-
-
-
-
-
-
-
+- Updated docker-compose.yml to:
+  - use semantic versioning for images (e.g., todo-app:2.1.0, mysql-db:1.1.0)
+  - pass database connection settings via environment variables: (ENGINE, NAME, USER, PASSWORD, HOST, PORT)
+- Modified todolist/settings.py to dynamically read environment variables for the DATABASES configuration
 
